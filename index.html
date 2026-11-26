@@ -100,11 +100,18 @@
   .btn:hover { background: var(--lake); }
   .btn.sun { background: var(--sun); color: var(--ridge); }
   .btn.sun:hover { background: #ffb946; }
+  .btn.alt {
+    background: transparent;
+    color: var(--ridge);
+    box-shadow: inset 0 0 0 2px var(--ridge);
+  }
+  .btn.alt:hover { background: var(--ridge); color: var(--cloud); }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem 1rem; align-items: center; }
   .hero .where { margin-top: 1.25rem; font-size: 0.98rem; font-weight: 500; color: #1b2d38; }
 
   @media (prefers-reduced-motion: no-preference) {
-    .hero h1, .hero p, .hero .btn, .hero .where { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
-    .hero p { animation-delay: .08s; } .hero .btn { animation-delay: .16s; } .hero .where { animation-delay: .22s; }
+    .hero h1, .hero p, .hero .hero-actions, .hero .where { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
+    .hero p { animation-delay: .08s; } .hero .hero-actions { animation-delay: .16s; } .hero .where { animation-delay: .22s; }
     @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
   }
 
@@ -233,7 +240,10 @@
     <div class="wrap">
       <h1>Practical AI training for your firm.</h1>
       <p>891 Consulting teaches financial and professional services teams to use AI well, on the work they already do, without putting client information at risk.</p>
-      <a class="btn" href="#contact">Start a conversation</a>
+      <div class="hero-actions">
+        <a class="btn" href="#contact">Start a conversation</a>
+        <a class="btn alt pricing-btn" href="mailto:info@891consulting.com?subject=Pricing%20request">Email for pricing</a>
+      </div>
       <p class="where">Serving Vermont, the Adirondacks, the Champlain Valley and the Capital Region.</p>
     </div>
   </div>
